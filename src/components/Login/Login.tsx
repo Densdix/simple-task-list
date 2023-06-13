@@ -4,6 +4,7 @@ import { RootState, useAppDispatch, useAppSelector } from "../../redux/store";
 import tasklistSlice, { setAuth } from "../../redux/reducers/tasklistSlice";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import style from "./Login.module.css"
 
 type Inputs = {
     login: string,
@@ -28,8 +29,19 @@ const Login = () => {
     return (
         <>
             {!isLogged ?
-            <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+            <div className={style.content}>
+            <div className="flex min-h-full flex justify-center px-6 py-12 lg:px-8">
+                <div className={style.header}>
+                    <h2 className="text-3xl text-white select-none ">Logo</h2>
+                    <nav className={style.navigation}>
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Contact</a>
+                        <button className={style.btnLogin}>Login</button>
+                    </nav>
+                </div>
+                {/* <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <img
                         className="mx-auto h-10 w-auto"
                         src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
@@ -38,9 +50,9 @@ const Login = () => {
                     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
                         Sign in to your account
                     </h2>
-                </div>
-
-                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                </div> */}
+                <div className={style.wrapper}>
+                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -87,8 +99,8 @@ const Login = () => {
                         password: admin
                         </p>
                     </p>
-                </div>
-            </div>
+                </div></div>
+            </div></div>
             : <Navigate to="/" />}
         </>
     )

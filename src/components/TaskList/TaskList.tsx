@@ -40,13 +40,13 @@ const TaskList = () => {
 
             <div className="">
                 <div className="float-left w-1/3 text-center">
-                    {todayTasksList.map(el => <TaskCard
+                    {todayTasksList.length !== 0 ? todayTasksList.map(el => <TaskCard
                         assignee={el.assignee}
                         due_date={el.due_date}
                         task_description={el.task_description}
                         task_name={el.task_name}
                         color={Color.Red}
-                    />)}
+                    />) : <NoTaskCard color={Color.Red}/>}
                 </div>
                 <div className="float-left w-1/3">
                     {withinWeekTasksList.length !== 0 ? withinWeekTasksList.map(el => <TaskCard
@@ -58,13 +58,13 @@ const TaskList = () => {
                     />) : <NoTaskCard color={Color.Yellow} />}
                 </div>
                 <div className="float-left w-1/3">
-                    {overWeekTasksList.map(el => <TaskCard
+                    {overWeekTasksList.length !== 0 ? overWeekTasksList.map(el => <TaskCard
                         assignee={el.assignee}
                         due_date={el.due_date}
                         task_description={el.task_description}
                         task_name={el.task_name}
                         color={Color.Green}
-                    />)}
+                        />) : <NoTaskCard color={Color.Green} />}
                 </div>
             </div>
         </div>
