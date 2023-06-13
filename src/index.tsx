@@ -8,6 +8,7 @@ import TaskList from './components/TaskList/TaskList';
 import Login from './components/Login/Login';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import TaskList2 from './components/TaskList/TaskList2';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <TaskList />
+        element: <TaskList2 />
       }
     ]
   },

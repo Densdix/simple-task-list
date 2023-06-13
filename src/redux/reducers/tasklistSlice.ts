@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import simpleResponse from '../../utils/sample-response.json'
+import simpleResponse2 from '../../utils/sample-response-v2.json'
 
 export interface ITask {
     assignee: string
@@ -13,14 +14,16 @@ type initStateType = {
     isAuth: boolean,
     todayTasksList: ITask[]
     withinWeekTasksList: ITask[]
-    overWeekTasksList: ITask[]
+    overWeekTasksList: ITask[],
+    response2: typeof simpleResponse2
 }
 
 const initState: initStateType = {
     isAuth: false,
     todayTasksList: [],
     withinWeekTasksList: [],
-    overWeekTasksList: []
+    overWeekTasksList: [],
+    response2: {} as typeof simpleResponse2
 }
 
 const tasklistSlice = createSlice({
@@ -38,7 +41,10 @@ const tasklistSlice = createSlice({
         },
         setoverWeekTasksList: (state, action: PayloadAction<ITask[]>) => {
             state.overWeekTasksList = action.payload
-        }
+        },
+        setResponse: (state, action: PayloadAction<typeof simpleResponse2>) => {
+            state.response2 = action.payload
+        },
     }
 })
 
@@ -68,9 +74,18 @@ export const getTaskListThunk = () => async (dispatch: Dispatch, getState: () =>
     dispatch(setoverWeekTasksList(overWeekTasks))
 }
 
+export const getTaskList2Thunk = () => async (dispatch: Dispatch, getState: () => RootState) => {
+
+    let tempResponse2 = {...simpleResponse2}
+    Object.entries(tempResponse2).map(el => el[1].tasks.map(el => el.due_date = new Date(+el.due_date * 1000).toLocaleDateString()))
+    Object.entries(tempResponse2).map(el => el[1].tasks.map(el => el.received_date = new Date(+el.received_date * 1000).toLocaleDateString()))
+
+    dispatch(setResponse(tempResponse2))
+}
+
 // Extract the action creators object and the reducer
 const { actions, reducer } = tasklistSlice
 // Extract and export each action creator by name
-export const { setAuth, setTodayTasksList, setoverWeekTasksList, setwithinWeekTasksList } = actions
+export const { setAuth, setTodayTasksList, setoverWeekTasksList, setwithinWeekTasksList, setResponse } = actions
 // Export the reducer, either as a default or named export
 export default reducer

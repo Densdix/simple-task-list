@@ -1,0 +1,175 @@
+{
+   "Emma":{
+      "colour":"red",
+      "tasks":[
+         {
+            "task_name":"Google influencer collaboration project",
+            "task_description":"Collaborate with influencers for brand promotion",
+            "due_date":"1678050000",
+            "received_date":"1677963600",
+            "colour":"yellow"
+         },
+         {
+            "task_name":"Amazon print advertisement creation",
+            "task_description":"Create compelling copy for a print advertisement",
+            "due_date":"1678039600",
+            "received_date":"1677953200",
+            "colour":"green"
+         }
+      ]
+   },
+   "William":{
+      "colour":"yellow",
+      "tasks":[
+         {
+            "task_name":"Apple TV commercial production",
+            "task_description":"Produce a TV commercial for a product launch",
+            "due_date":"1678046800",
+            "received_date":"1677960400",
+            "colour":"red"
+         },
+         {
+            "task_name":"Apple new product campaign",
+            "task_description":"Design a creative campaign for a new product",
+            "due_date":"1678039600",
+            "received_date":"1677953200",
+            "colour":"green"
+         }
+      ]
+   },
+   "Michael":{
+      "colour":"green",
+      "tasks":[
+         {
+            "task_name":"Coca-cola email marketing campaign",
+            "task_description":"Plan and execute an email marketing campaign",
+            "due_date":"1678046800",
+            "received_date":"1677960400",
+            "colour":"yellow"
+         },
+         {
+            "task_name":"Microsoft client relationship management",
+            "task_description":"Manage client relationships and project coordination",
+            "due_date":"1678043200",
+            "received_date":"1677956800",
+            "colour":"red"
+         }
+      ]
+   },
+   "John":{
+      "colour":"red",
+      "tasks":[
+         {
+            "task_name":"Microsoft advertising data analysis",
+            "task_description":"Analyze advertising data for performance insights",
+            "due_date":"1678025200",
+            "received_date":"1677938800",
+            "colour":"green"
+         },
+         {
+            "task_name":"Google consumer market research",
+            "task_description":"Conduct market research on consumer preferences",
+            "due_date":"1678032400",
+            "received_date":"1677946000",
+            "colour":"yellow"
+         }
+      ]
+   },
+   "Olivia":{
+      "colour":"yellow",
+      "tasks":[
+         {
+            "task_name":"Facebook online ads optimization",
+            "task_description":"Optimize online ads for better conversion rates",
+            "due_date":"1678036000",
+            "received_date":"1677949600",
+            "colour":"red"
+         },
+         {
+            "task_name":"Coca-cola social media strategy",
+            "task_description":"Develop a social media marketing strategy",
+            "due_date":"1678053600",
+            "received_date":"1677967200",
+            "colour":"green"
+         }
+      ]
+   },
+   "Sophia":{
+      "colour":"green",
+      "tasks":[
+         {
+            "task_name":"Netflix original series promotion",
+            "task_description":"Work with creative team for promotional activities",
+            "due_date":"1678050000",
+            "received_date":"1677963600",
+            "colour":"red"
+         },
+         {
+            "task_name":"Samsung product placement",
+            "task_description":"Strategize and execute product placement in movies",
+            "due_date":"1678046800",
+            "received_date":"1677960400",
+            "colour":"yellow"
+         },
+         {
+            "task_name":"Nike global sports event sponsorship",
+            "task_description":"Handle sponsorship details for upcoming sports event",
+            "due_date":"1678039600",
+            "received_date":"1677953200",
+            "colour":"green"
+         }
+      ]
+   },
+   "Liam":{
+      "colour":"yellow",
+      "tasks":[
+         {
+            "task_name":"Uber service expansion campaign",
+            "task_description":"Plan and execute marketing campaign for service expansion",
+            "due_date":"1678043200",
+            "received_date":"1677956800",
+            "colour":"red"
+         },
+         {
+            "task_name":"Tesla electric vehicle launch",
+            "task_description":"Coordinate launch event for new electric vehicle",
+            "due_date":"1678036000",
+            "received_date":"1677949600",
+            "colour":"green"
+         },
+         {
+            "task_name":"Spotify premium membership drive",
+            "task_description":"Devise marketing strategy for premium membership drive",
+            "due_date":"1678053600",
+            "received_date":"1677967200",
+            "colour":"yellow"
+         }
+      ]
+   },
+   "James":{
+      "colour":"red",
+      "tasks":[
+         {
+            "task_name":"Snapchat user engagement plan",
+            "task_description":"Design and implement user engagement activities",
+            "due_date":"1678032400",
+            "received_date":"1677946000",
+            "colour":"yellow"
+         },
+         {
+            "task_name":"Airbnb brand partnership strategy",
+            "task_description":"Develop and manage brand partnership deals",
+            "due_date":"1678025200",
+            "received_date":"1677938800",
+            "colour":"green"
+         },
+         {
+            "task_name":"Microsoft technology seminar coordination",
+            "task_description":"Organize and manage upcoming technology seminar",
+            "due_date":"1678050000",
+            "received_date":"1677963600",
+            "colour":"red"
+         }
+      ]
+   }
+}
