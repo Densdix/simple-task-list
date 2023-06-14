@@ -29,12 +29,12 @@ const TaskList2 = () => {
                 {Object.entries(simpleResponse).
                     map((el, index) => <div
                         onClick={() => toggleTab(index)}
-                        style={{ background: el[1].colour }}
+                        style={{ background: el[1].colour === "red" ? "rgb(244 63 94)" : el[1].colour === "yellow" ? "rgb(234 179 8)" : "rgb(34 197 94)" }}
                         className={toggleState === index ? "border border-white cursor-pointer p-2 text-white" : "cursor-pointer p-2 text-white"}>{el[0]}
                     </div>)}
             </div>
             <div className="bg-gray-200 m-3 p-2 mb-5 h-full">
-                <div style={{ color: Object.entries(simpleResponse).at(toggleState)?.[1].colour }} className="text-left text-5xl font-bold">{Object.entries(simpleResponse2).at(toggleState)?.[0]}</div>
+                <div className="text-left text-5xl font-bold text-black">{Object.entries(simpleResponse2).at(toggleState)?.[0]}</div>
                 <div className="pt-2">
                     <div className="">{Object.entries(simpleResponse).at(toggleState)?.[1].tasks
                         .map(el => <TaskCard
@@ -63,25 +63,25 @@ const TaskCard: React.FC<ITaskCard> = ({ due_date, received_date, task_descripti
     if (colour === "red") {
         return (
             <div className="bg-rose-500 max-md:w-full justify-center m-auto flex py-1 my-2">
-                <div className="w-6/12 text-sm font-bold text-white text-left pl-5 m-auto">{task_name}</div>
-                <div className="w-3/12 text-xs text-white text-left pl-5 m-auto">{received_date}</div>
-                <div className="w-3/12 text-xs text-white text-left pl-5 m-auto">{due_date}</div>
+                <div className="w-8/12 text-sm font-bold text-white text-left pl-5 m-auto">{task_name}</div>
+                <div className="w-2/12 text-xs text-white text-left pl-5 m-auto">{received_date}</div>
+                <div className="w-2/12 text-xs text-white text-left pl-5 m-auto">{due_date}</div>
             </div>
         )
     } else if (colour === "yellow") {
         return (
             <div className="bg-yellow-500 max-md:w-full justify-center m-auto flex py-1 my-2">
-                <div className="w-6/12 text-sm font-bold text-white text-left pl-5 m-auto">{task_name}</div>
-                <div className="w-3/12 text-xs text-white text-left pl-5 m-auto">{received_date}</div>
-                <div className="w-3/12 text-xs text-white text-left pl-5 m-auto">{due_date}</div>
+                <div className="w-8/12 text-sm font-bold text-white text-left pl-5 m-auto">{task_name}</div>
+                <div className="w-2/12 text-xs text-white text-left pl-5 m-auto">{received_date}</div>
+                <div className="w-2/12 text-xs text-white text-left pl-5 m-auto">{due_date}</div>
             </div>
         )
     } else {
         return (
             <div className="bg-green-500 max-md:w-full justify-center m-auto flex py-1 my-2">
-                <div className="w-6/12 text-sm font-bold text-white text-left pl-5 m-auto">{task_name}</div>
-                <div className="w-3/12 text-xs text-white text-left pl-5 m-auto">{received_date}</div>
-                <div className="w-3/12 text-xs text-white text-left pl-5 m-auto">{due_date}</div>
+                <div className="w-8/12 text-sm font-bold text-white text-left pl-5 m-auto">{task_name}</div>
+                <div className="w-2/12 text-xs text-white text-left pl-5 m-auto">{received_date}</div>
+                <div className="w-2/12 text-xs text-white text-left pl-5 m-auto">{due_date}</div>
             </div>
         )
     }

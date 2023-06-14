@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice, Dispatch, PayloadAction } from "@reduxjs
 import { RootState } from "../store";
 import simpleResponse from '../../utils/sample-response.json'
 import simpleResponse2 from '../../utils/sample-response-v2.json'
+import { axiosGetTaskListData } from "../../api/api";
 
 export interface ITask {
     assignee: string
@@ -77,8 +78,9 @@ export const getTaskListThunk = () => async (dispatch: Dispatch, getState: () =>
 export const getTaskList2Thunk = () => async (dispatch: Dispatch, getState: () => RootState) => {
 
     let tempResponse2 = {...simpleResponse2}
-    Object.entries(tempResponse2).map(el => el[1].tasks.map(el => el.due_date = new Date(+el.due_date * 1000).toLocaleDateString()))
-    Object.entries(tempResponse2).map(el => el[1].tasks.map(el => el.received_date = new Date(+el.received_date * 1000).toLocaleDateString()))
+    axiosGetTaskListData().then(data => console.log(data))
+    Object.entries(tempResponse2).map(el => el[1].tasks.map(el => el.due_date = new Date(+el.due_date * 1000).toLocaleDateString().slice(0, 5)))
+    Object.entries(tempResponse2).map(el => el[1].tasks.map(el => el.received_date = new Date(+el.received_date * 1000).toLocaleDateString().slice(0, 5)))
 
     dispatch(setResponse(tempResponse2))
 }
