@@ -75,14 +75,13 @@ export const getTaskListThunk = () => async (dispatch: Dispatch, getState: () =>
     dispatch(setoverWeekTasksList(overWeekTasks))
 }
 
-export const getTaskList2Thunk = () => async (dispatch: Dispatch, getState: () => RootState) => {
-
-    let tempResponse2 = {...simpleResponse2}
-    axiosGetTaskListData().then(data => console.log(data))
-    Object.entries(tempResponse2).map(el => el[1].tasks.map(el => el.due_date = new Date(+el.due_date * 1000).toLocaleDateString().slice(0, 5)))
-    Object.entries(tempResponse2).map(el => el[1].tasks.map(el => el.received_date = new Date(+el.received_date * 1000).toLocaleDateString().slice(0, 5)))
-
-    dispatch(setResponse(tempResponse2))
+export const getTaskList2Thunk = () => async (dispatch: Dispatch, getState: () => RootState) => {    
+    axiosGetTaskListData().then(data => {
+        let tempResponse2 = {...data}
+        Object.entries(data).map(el => el[1].tasks.map(el => el.due_date = new Date(+el.due_date * 1000).toLocaleDateString().slice(0, 5)))
+        Object.entries(tempResponse2).map(el => el[1].tasks.map(el => el.received_date = new Date(+el.received_date * 1000).toLocaleDateString().slice(0, 5)))
+        dispatch(setResponse(tempResponse2))
+    })
 }
 
 // Extract the action creators object and the reducer

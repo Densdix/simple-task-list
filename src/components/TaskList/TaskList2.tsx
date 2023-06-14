@@ -15,12 +15,7 @@ const TaskList2 = () => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        // const tempResponse = {...simpleResponse2}
-        // let timeStamp= 1807110465663
-        // Object.entries(tempResponse).map(el => el[1].tasks.map(el => el.due_date = new Date(+el.due_date * 1000).toLocaleDateString()))
         dispatch(getTaskList2Thunk())
-        // console.log(simpleResponse2)
-        // console.log(Object.entries(simpleResponse2).at(1))
     }, [])
 
     return (
@@ -30,7 +25,7 @@ const TaskList2 = () => {
                     map((el, index) => <div
                         onClick={() => toggleTab(index)}
                         style={{ background: el[1].colour === "red" ? "rgb(244 63 94)" : el[1].colour === "yellow" ? "rgb(234 179 8)" : "rgb(34 197 94)" }}
-                        className={toggleState === index ? "border border-white cursor-pointer p-2 text-white" : "cursor-pointer p-2 text-white"}>{el[0]}
+                        className={toggleState === index ? "border border-black cursor-pointer p-2 text-white" : "cursor-pointer p-2 text-white"}>{el[0]}
                     </div>)}
             </div>
             <div className="bg-gray-200 m-3 p-2 mb-5 h-full">
